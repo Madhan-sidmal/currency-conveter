@@ -6,26 +6,40 @@
     <title>Currency Converter</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="converter">
-            <div class="image-container">
-                <img src="https://static.vecteezy.com/system/resources/previews/013/167/051/original/currency-exchange-3d-illustration-free-png.png" alt="Currency Exchange" />
+        <h1>💱 Currency Converter</h1>
+        <p>Convert currencies with real-time exchange rates and view trends.</p>
+
+        <!-- Main Content Wrapper -->
+        <div class="content-wrapper">
+            <!-- Left Section: Bar Chart -->
+            <div class="chart-section">
+                <h2>Exchange Rates Comparison</h2>
+                <canvas id="barChart"></canvas>
             </div>
-            <h1>💱 Currency Converter</h1>
-            <p>Convert currencies instantly with real-time exchange rates.</p>
-            <div class="form-group">
+
+            <!-- Middle Section: Currency Converter -->
+            <div class="converter">
+                <h2>Convert Currency</h2>
                 <input type="number" id="amount" placeholder="Enter amount" />
-            </div>
-            <div class="form-group">
                 <select id="from-currency"></select>
                 <select id="to-currency"></select>
+                <button id="convert-btn">Convert</button>
+                <div id="result" class="result"></div>
             </div>
-            <button id="convert-btn">Convert</button>
-            <div id="result" class="result"></div>
+
+            <!-- Right Section: Line Chart -->
+            <div class="chart-section">
+                <h2>Currency Growth Trend</h2>
+                <canvas id="lineChart"></canvas>
+            </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
